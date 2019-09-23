@@ -19,7 +19,7 @@ create_vm() # params: machine_name, machine_type, tfnightly
     extra_install=""
     if [ "$3" != 0 ];
     then
-        extra_install="python3 -m pip install --upgrade pip; python3 -m pip install tf-nightly-2.0-preview";
+        extra_install="python3 -m pip install --upgrade pip; python3 -m pip install tf-nightly-2.0-preview; python3 -m pip install behave";
         version_msg="tf-nightly-2.0-preview";
     else
         version=$DEFAULT_TF_VERSION
