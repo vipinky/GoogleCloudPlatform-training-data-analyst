@@ -3,8 +3,8 @@
 # please configure your login, project region and zone first by running gcloud init
 # region us-central1 zone us-central1-b usually have TPUs available
 
-DEFAULT_TF_VERSION="1.14"
-DEFAULT_IMAGE_FAMILY="tf-"${DEFAULT_TF_VERSION//./-}"-cpu"
+DEFAULT_TF_VERSION="2.0"
+DEFAULT_IMAGE_FAMILY="tf2-"${DEFAULT_TF_VERSION//./-}"-cpu"
 
 usage()
 {
@@ -19,7 +19,7 @@ create_vm() # params: machine_name, machine_type, tfnightly
     extra_install=""
     if [ "$3" != 0 ];
     then
-        extra_install="python3 -m pip install --upgrade pip; python3 -m pip install tf-nightly-2.0-preview; python3 -m pip install behave";
+        extra_install="python3 -m pip install --upgrade pip; python3 -m pip install tf-nightly; python3 -m pip install behave";
         version_msg="tf-nightly-2.0-preview";
     else
         version=$DEFAULT_TF_VERSION
