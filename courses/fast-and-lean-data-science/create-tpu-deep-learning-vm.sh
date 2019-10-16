@@ -42,7 +42,7 @@ create_tpu() # params: machine_name, tpu_type, tfnightly
 {
     if [ "$3" != 0 ];
     then
-        version="nightly";
+        version="nightly-2.x";
     else
         version=$DEFAULT_TF_VERSION
     fi
